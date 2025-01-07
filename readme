@@ -1,0 +1,6 @@
+####### BEST PRACTICES ###########
+include/ folder is strictly for headers that have to be exposed publiicly
+src/ source code and header files for internal use
+libs/ thid part libraries used by project
+test/ for tests
+CmakeList.txt: tells Cmake what to do , build system generator
