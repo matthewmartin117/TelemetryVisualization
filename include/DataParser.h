@@ -14,7 +14,7 @@ class DataParser {
   std::vector<TelemetryData> dataEntries;
   // methods
   // load data by parsining csv or json
-  void loadData(const std::string& filename);
+  bool loadData(const std::string& filename);
   // returns the parsed data
   std::vector<TelemetryData> getData() const;
 };
