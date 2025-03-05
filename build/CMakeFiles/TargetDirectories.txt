@@ -1,0 +1,3 @@
+/Users/matthewmartin/Documents/C++/tele/build/CMakeFiles/SFMLApp.dir
+/Users/matthewmartin/Documents/C++/tele/build/CMakeFiles/edit_cache.dir
+/Users/matthewmartin/Documents/C++/tele/build/CMakeFiles/rebuild_cache.dir

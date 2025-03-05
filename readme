@@ -1,6 +1,89 @@
-####### BEST PRACTICES ###########
-include/ folder is strictly for headers that have to be exposed publiicly
-src/ source code and header files for internal use
-libs/ thid part libraries used by project
-test/ for tests
-CmakeList.txt: tells Cmake what to do , build system generator
+Telemetry Data Analysis Project
+
+Overview
+
+This project processes and visualizes telemetry data from CSV files. It includes modules for parsing, storing, analyzing, and visualizing data using C++ and SFML.
+
+## File Structure
+project-root/
+├── data/
+│   ├── telemetry_sampledata.csv  # Sample telemetry data
+├── include/
+│   ├── DataParser.h              # Parses CSV files
+│   ├── DataVisualizer.h          # Handles SFML-based visualization
+│   ├── TelemetryData.h           # Data structure for telemetry entries
+│   ├── TelemetryStatistics.h     # Computes stats from telemetry data
+├── src/
+│   ├── DataParser.cpp            # Implements CSV parsing
+│   ├── DataVisualizer.cpp        # Implements visualization
+│   ├── TelemetryData.cpp         # Implements telemetry data structure
+│   ├── TelemetryStatistics.cpp   # Implements statistical calculations
+│   ├── main.cpp                  # Main program entry point
+├── CMakeLists.txt                # CMake build configuration
+
+
+
+## Components
+
+### 1. Data Parsing (DataParser)
+
+Reads telemetry data from a CSV file.
+
+Extracts fields: timestamp, speed, altitude, battery.
+
+Handles malformed or missing data.
+
+Stores parsed data in a vector of TelemetryData objects.
+
+### 2. Telemetry Data Structure (TelemetryData)
+
+Represents a single telemetry entry.
+
+Stores speed, altitude, battery level, and timestamp.
+
+### 3. Statistical Analysis (TelemetryStatistics)
+
+Computes averages and trends from telemetry data.
+
+Provides insights into speed, altitude, and battery consumption over time.
+
+### 4. Data Visualization (DataVisualizer)
+
+Uses SFML to display telemetry data graphically.
+
+Plots speed, altitude, and battery levels over time.
+
+### 5. Main Program (main.cpp)
+
+Loads telemetry data using DataParser.
+
+Computes statistics with TelemetryStatistics.
+
+Displays results using DataVisualizer.
+
+## Installation & Compilation
+
+### 1. Install Dependencies
+
+Ensure you have SFML and CMake installed:
+
+On Mac (Homebrew)
+brew install sfml cmake
+
+On Ubuntu
+sudo apt install libsfml-dev cmake
+
+## 2. Build the Project
+
+
+Run the following in the project root:
+
+mkdir build && cd build
+cmake ..
+make
+
+## 3. Run the Program
+./telemetry_app
+
+
+
